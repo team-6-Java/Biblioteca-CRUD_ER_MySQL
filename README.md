@@ -30,7 +30,7 @@ En el Main se encuentra la seccion del proyecto finalizada y en las ramas las di
 
 Repositorio de los ejercicios:
 ```
-https://github.com/team-6-Java/ProyectoFinal-BasesDatos
+https://github.com/team-6-Java/Biblioteca-CRUD_ER_MySQL
 ```
 ###   3. Lista de herramientas para poder ejecutarlo:
 ```
