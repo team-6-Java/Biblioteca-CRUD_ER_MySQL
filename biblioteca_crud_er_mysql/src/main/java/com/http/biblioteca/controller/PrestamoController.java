@@ -17,13 +17,9 @@ import com.http.biblioteca.dto.Prestamo;
 import com.http.biblioteca.service.PrestamoService;
 
 
-//@SpringBootApplication(scanBasePackages={
-//"com.http.biblioteca.service.PrestamoService", "com.http.biblioteca.service.BibliotecaCrudErMysqlApplication"})
-
-
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/biblioteca")
 public class PrestamoController {
 
 	@Autowired

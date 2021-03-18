@@ -16,24 +16,24 @@ import com.http.biblioteca.dto.Usuario;
 import com.http.biblioteca.service.UsuarioService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/biblioteca")
 public class UsuarioController {
 
 	@Autowired
 	UsuarioService UsuarioService;
 	
-	@GetMapping("/usuarios")
+	@GetMapping("/usuario")
 	public List<Usuario> listarUsuario(){
 		return UsuarioService.listarUsuario();
 	}
 	
-	@PostMapping("/usuarios")
+	@PostMapping("/usuario")
 	public Usuario salvarUsuario(@RequestBody Usuario Usuario) {
 		
 		return UsuarioService.guardarUsuario(Usuario);
 	}
 	
-	@GetMapping("/usuarios/{username}")
+	@GetMapping("/usuario/{username}")
 	public Usuario UsuarioUsername(@PathVariable(name="username") String username) {
 		
 		Usuario Usuario_xusername= new Usuario();
@@ -45,7 +45,7 @@ public class UsuarioController {
 		return Usuario_xusername;
 	}
 	
-	@PutMapping("/usuarios/{username}")
+	@PutMapping("/usuario/{username}")
 	public Usuario actualizarUsuario(@PathVariable(name="username")String username,@RequestBody Usuario Usuario) {
 		
 		Usuario Usuario_seleccionado= new Usuario();
@@ -69,7 +69,7 @@ public class UsuarioController {
 		return Usuario_actualizado;
 	}
 	
-	@DeleteMapping("/usuarios/{username}")
+	@DeleteMapping("/usuario/{username}")
 	public void eliminarUsuario(@PathVariable(name="username")String username) {
 		UsuarioService.eliminarUsuario(username);
 	}

@@ -40,19 +40,19 @@ public class Prestamo {
 	private Usuario usuario;
 	
 	
-/*
+
 	@ManyToOne
 	@JoinColumn(name = "Libro")
 	private Libro libro;
 	
-*/
+
 	public Prestamo () {
     	
     }
 
 
 	public Prestamo(Long id, String valoracion_libro, Date fecha_prestamo, Date fecha_devolucion, Usuario usuario
-//			,Libro libro
+			,Libro libro
 			) {
 		super();
 		this.id = id;
@@ -60,7 +60,7 @@ public class Prestamo {
 		this.fecha_prestamo = fecha_prestamo;
 		this.fecha_devolucion = fecha_devolucion;
 		this.usuario = usuario;
-		//this.libro = libro;
+		this.libro = libro;
 	}
 
 
@@ -113,7 +113,7 @@ public class Prestamo {
 		this.usuario = usuario;
 	}
 
-/*
+
 	public Libro getLibro() {
 		return libro;
 	}
@@ -123,7 +123,7 @@ public class Prestamo {
 		this.libro = libro;
 	}
 	
-*/	
+
 	
 
 	

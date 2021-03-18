@@ -2,14 +2,14 @@ drop database if exists bibliotecaDB;
 create database bibliotecaDB;
 use bibliotecaDB;
 
-drop table if exists Mensajes;
+drop table if exists Mensaje;
 drop table if exists Prestamo;
 drop table if exists Autor;
 drop table if exists Libro;
 drop table if exists Editorial;
 drop table if exists Usuario;
 
-create table usuario (
+create table Usuario (
 username varchar(255) not null,
 nombre varchar(255) not null,
 apellido varchar(255),
@@ -56,15 +56,15 @@ create table Prestamo(
 id int auto_increment,
 valoracion_libro varchar(255),
 fecha_prestamo date not null,
-fecha_devolucion date not null,
+fecha_devolucion date,
 usuario varchar(255),
 libro int,
 primary key (id),
-foreign key (usuario) references Usuario(username) on update cascade on delete cascade,
+foreign key (usuario) references Usuario(username) on delete cascade on update cascade,
 foreign key (libro) references Libro(id) on delete cascade on update cascade
 );
 
-create table Mensajes(
+create table Mensaje(
 id int auto_increment,
 usuario1 varchar(255),
 usuario2 varchar(255),
@@ -72,7 +72,6 @@ primary key (id),
 foreign key (usuario1) references Usuario(username) on update cascade,
 foreign key (usuario2) references Usuario(username) on update cascade
 );
-
 
 
 INSERT INTO usuario VALUES("giorocor","Giovanny","Rodriguez","giovanny@hotmail.com","123456789","","");
@@ -125,6 +124,6 @@ INSERT INTO Prestamo VALUES(0,"Buen libro",'2021-03-20','2021-02-21',"valarias",
 INSERT INTO Prestamo VALUES(0,"Excelente",'2021-03-20','2021-02-22',"lumar",2);
 INSERT INTO Prestamo VALUES(0,"Muy aburrido",'2021-03-21','2021-02-23',"andregar",3);
 
-INSERT INTO Mensajes VALUES(0,"homersi","lumar");
-INSERT INTO Mensajes VALUES(0,"kasan","andregar");
-INSERT INTO Mensajes VALUES(0,"epe","lulo");
+INSERT INTO Mensaje VALUES(0,"homersi","lumar");
+INSERT INTO Mensaje VALUES(0,"kasan","andregar");
+INSERT INTO Mensaje VALUES(0,"epe","lulo");

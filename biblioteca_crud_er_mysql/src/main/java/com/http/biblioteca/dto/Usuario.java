@@ -48,19 +48,22 @@ public class Usuario {
     @JoinColumn(name="id")
     private List<Prestamo> prestamo;
 
+	@OneToMany
+    @JoinColumn(name="id")
+    private List<Mensaje> mensaje;
 	
+	@OneToMany
+    @JoinColumn(name="id")
+    private List<Libro> libro;
 	
-	  //@OneToMany
-    //@JoinColumn(name="id")
-    //private List<Video> video;
 	
 	
 	public Usuario () {
     	
     }
-
+	
 	public Usuario(String username, String nombre, String apellido, String email, String contraseña, String descripcion,
-			String imagen, List<Prestamo> prestamo) {
+			String imagen, List<Prestamo> prestamo, List<Mensaje> mensaje, List<Libro> libro) {
 		super();
 		this.username = username;
 		this.nombre = nombre;
@@ -70,11 +73,10 @@ public class Usuario {
 		this.descripcion = descripcion;
 		this.imagen = imagen;
 		this.prestamo = prestamo;
+		this.mensaje = mensaje;
+		this.libro = libro;
 	}
-	
-	
-	
-	
+
 	public String getUsername() {
 		return username;
 	}
@@ -131,6 +133,18 @@ public class Usuario {
 		this.imagen = imagen;
 	}
 	
+	public void setPrestamo(List<Prestamo> prestamo) {
+		this.prestamo = prestamo;
+	}
+
+	public void setMensaje(List<Mensaje> mensaje) {
+		this.mensaje = mensaje;
+	}
+
+	public void setLibro(List<Libro> libro) {
+		this.libro = libro;
+	}
+	
 
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "prestamo")
@@ -138,11 +152,26 @@ public class Usuario {
 		return prestamo;
 	}
 
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "mensaje")
+	public List<Mensaje> getMensaje() {
+		return mensaje;
+	}
+	
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "libro")
+	public List<Libro> getLibro() {
+		return libro;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "Usuario [username=" + username + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email
-				+ ", contraseña=" + contraseña + ", descripcion=" + descripcion + ", imagen=" + imagen + "]";
+				+ ", contraseña=" + contraseña + ", descripcion=" + descripcion + ", imagen=" + imagen + ", prestamo="
+				+ prestamo + ", mensaje=" + mensaje + ", libro=" + libro + "]";
 	}
+
 	
 	
 	
