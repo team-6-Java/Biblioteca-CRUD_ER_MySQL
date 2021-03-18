@@ -2,7 +2,9 @@ drop database if exists bibliotecaDB;
 create database bibliotecaDB;
 use bibliotecaDB;
 
+
 drop table if exists Mensaje;
+
 drop table if exists Prestamo;
 drop table if exists Autor;
 drop table if exists Libro;
@@ -64,13 +66,16 @@ foreign key (usuario) references Usuario(username) on delete cascade on update c
 foreign key (libro) references Libro(id) on delete cascade on update cascade
 );
 
+
 create table Mensaje(
+
 id int auto_increment,
 usuario1 varchar(255),
 usuario2 varchar(255),
 primary key (id),
 foreign key (usuario1) references Usuario(username) on update cascade,
 foreign key (usuario2) references Usuario(username) on update cascade
+
 );
 
 
@@ -127,3 +132,6 @@ INSERT INTO Prestamo VALUES(0,"Muy aburrido",'2021-03-21','2021-02-23',"andregar
 INSERT INTO Mensaje VALUES(0,"homersi","lumar");
 INSERT INTO Mensaje VALUES(0,"kasan","andregar");
 INSERT INTO Mensaje VALUES(0,"epe","lulo");
+
+
+
