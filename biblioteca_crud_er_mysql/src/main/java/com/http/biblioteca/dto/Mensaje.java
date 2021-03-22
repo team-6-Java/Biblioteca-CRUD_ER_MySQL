@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Mensajes")
+@Table(name = "mensajes")
 public class Mensaje {
 
 	// Atributos de entidad

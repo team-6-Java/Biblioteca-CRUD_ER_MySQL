@@ -12,6 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -28,6 +31,7 @@ public class Editorial {
 
 	@OneToMany
     @JoinColumn(name="id")
+	@Cascade(CascadeType.SAVE_UPDATE)
     private List<Libro> libro;
 	
 	

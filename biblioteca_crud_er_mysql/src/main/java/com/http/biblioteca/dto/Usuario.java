@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.List;
@@ -46,14 +49,17 @@ public class Usuario {
 	
 	@OneToMany
     @JoinColumn(name="id")
+	@Cascade(CascadeType.ALL)
     private List<Prestamo> prestamo;
 
 	@OneToMany
     @JoinColumn(name="id")
+	@Cascade(CascadeType.ALL)
     private List<Mensaje> mensaje;
 	
 	@OneToMany
     @JoinColumn(name="id")
+	@Cascade(CascadeType.ALL)
     private List<Libro> libro;
 	
 	

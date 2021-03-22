@@ -69,8 +69,8 @@ public class UsuarioController {
 		return Usuario_actualizado;
 	}
 	
-	@DeleteMapping("/usuario/{username}")
-	public void eliminarUsuario(@PathVariable(name="username")String username) {
+	@DeleteMapping("/usuario/{id}")
+	public void eliminarUsuario(@PathVariable(name="id")String username) {
 		UsuarioService.eliminarUsuario(username);
 	}
 	
