@@ -34,6 +34,10 @@ https://github.com/team-6-Java/Biblioteca-CRUD_ER_MySQL
 ```
 ###   3. Lista de herramientas para poder ejecutarlo:
 ```
-MySQL WORKBENCH 8.0
+Framework Spring Tool Suite  4.0
+
+Maven 4.0
+
+Postman 8.0
 
 ```
