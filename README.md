@@ -1,4 +1,4 @@
-# Proyecto Final - Biblioteca
+# Proyecto Final - bbp (bibliophilia App)
 
 ![tablet-1632909_1920](https://user-images.githubusercontent.com/71090798/110982323-10b87800-8371-11eb-85ef-d46cdc3cfb7b.jpg)
 
